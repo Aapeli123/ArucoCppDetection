@@ -2,6 +2,6 @@ build
 .vscode
 CMakeFiles
 cvtest
-*cmake
+*.cmake
 Makefile
 CMakeCache.txt
