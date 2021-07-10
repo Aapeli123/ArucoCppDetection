@@ -1,3 +1,7 @@
 build
 .vscode
 CMakeFiles
+cvtest
+*cmake
+Makefile
+CMakeCache.txt
