@@ -3,14 +3,20 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/core/mat.hpp>
 #include <opencv2/aruco.hpp>
+#include <opencv2/shape.hpp>
 
 #include <vector>
+
+#include "balldetector.h"
 
 int main() {
     cv::namedWindow("frame", cv::WINDOW_AUTOSIZE);
     auto capture = cv::VideoCapture(0);
     auto data = cv::Mat();
-    
+    auto exampledata = cv::imread("ExampleArena.png");
+
+    detectFloorballs(exampledata);
+    return 1;
     // Aruco data
     std::vector<int> ids;
     std::vector<std::vector<cv::Point2f>> markerCorners, rejectedCandidates;
@@ -19,6 +25,7 @@ int main() {
     auto parameters = cv::aruco::DetectorParameters::create();
     auto dictionary = cv::aruco::getPredefinedDictionary(cv::aruco::DICT_6X6_250);
 
+    
 
     while(true) {
         bool succ = capture.read(data);

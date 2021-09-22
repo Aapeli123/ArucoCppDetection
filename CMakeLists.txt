@@ -11,6 +11,6 @@ message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
 
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
-add_executable(cvtest main.cpp)
+add_executable(cvtest main.cpp balldetector.cpp balldetector.h)
 
 target_link_libraries( cvtest ${OpenCV_LIBS} )
